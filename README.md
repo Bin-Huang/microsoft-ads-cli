@@ -1,4 +1,4 @@
-# microsoft-advertising-cli
+# microsoft-ads-cli
 
 A Microsoft Advertising CLI designed for AI agents. Wraps the official Microsoft Advertising API with simple, agent-friendly commands.
 

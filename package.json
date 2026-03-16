@@ -1,10 +1,10 @@
 {
-  "name": "microsoft-advertising-cli",
+  "name": "microsoft-ads-cli",
   "version": "0.1.0",
   "description": "Microsoft Advertising CLI for AI agents",
   "type": "module",
   "bin": {
-    "microsoft-advertising-cli": "dist/index.js"
+    "microsoft-ads-cli": "dist/index.js"
   },
   "files": [
     "dist",
@@ -19,7 +19,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bin-Huang/microsoft-advertising-cli.git"
+    "url": "https://github.com/Bin-Huang/microsoft-ads-cli.git"
   },
   "engines": {
     "node": ">=18"
