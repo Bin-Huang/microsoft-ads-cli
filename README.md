@@ -1,6 +1,6 @@
 # microsoft-ads-cli
 
-Give AI agents direct access to Microsoft Advertising data. One command to query campaigns, keywords, audiences, and pull performance reports -- no SDK, no docs to read, no tokens wasted on boilerplate.
+Microsoft Ads CLI for AI agents (and humans). Pull performance reports across Search, Shopping, and Audience campaigns, manage UET conversion goals, analyze keyword bids on Bing, and more.
 
 **Works with:** OpenClaw, Claude Code, Cursor, Codex, and any agent that can run shell commands.
 
