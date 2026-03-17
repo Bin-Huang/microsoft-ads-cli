@@ -1,6 +1,6 @@
 {
   "name": "microsoft-ads-cli",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Microsoft Advertising CLI for AI agents",
   "type": "module",
   "bin": {
