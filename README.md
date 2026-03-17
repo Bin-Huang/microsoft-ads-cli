@@ -31,7 +31,7 @@ Core APIs covered:
 ### Step 1: Register an application
 
 1. Go to [Azure Portal](https://portal.azure.com/) and sign in.
-2. Navigate to Azure Active Directory → App registrations → New registration.
+2. Navigate to Microsoft Entra ID → App registrations → New registration.
 3. Set redirect URI to `https://login.microsoftonline.com/common/oauth2/nativeclient` for desktop apps.
 4. Note your **Application (client) ID**.
 
@@ -46,7 +46,7 @@ Use the Microsoft identity platform OAuth2 flow:
 
 ```bash
 # 1. Get authorization code (open in browser)
-# https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient&scope=https://ads.microsoft.com/msads.manage
+# https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient&scope=https://ads.microsoft.com/msads.manage offline_access
 
 # 2. Exchange code for tokens
 curl -X POST https://login.microsoftonline.com/common/oauth2/v2.0/token \
@@ -54,7 +54,7 @@ curl -X POST https://login.microsoftonline.com/common/oauth2/v2.0/token \
   -d "grant_type=authorization_code" \
   -d "code=YOUR_AUTH_CODE" \
   -d "redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient" \
-  -d "scope=https://ads.microsoft.com/msads.manage"
+  -d "scope=https://ads.microsoft.com/msads.manage offline_access"
 ```
 
 ### Step 4: Place the credentials file
@@ -79,6 +79,18 @@ export MICROSOFT_ADS_DEVELOPER_TOKEN=your_developer_token
 export MICROSOFT_ADS_CUSTOMER_ID=your_customer_id
 export MICROSOFT_ADS_ACCOUNT_ID=your_account_id
 ```
+
+You can also pass a custom credentials file path with `--credentials`:
+
+```bash
+microsoft-ads-cli accounts --credentials /path/to/credentials.json
+```
+
+Credential resolution order:
+
+1. `--credentials <path>` flag (if provided)
+2. Environment variables (`MICROSOFT_ADS_ACCESS_TOKEN`, `MICROSOFT_ADS_DEVELOPER_TOKEN`, etc.)
+3. Default file at `~/.config/microsoft-ads-cli/credentials.json`
 
 ## Usage
 
