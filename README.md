@@ -223,6 +223,7 @@ microsoft-ads-cli conversion-goals --type "Event,OfflineConversion"
 Options:
 - `--account-id <id>` -- ad account ID
 - `--type <type>` -- goal type (comma-separated): Url, Duration, PagesViewedPerVisit, Event, AppInstall, OfflineConversion, InStoreTransaction (default all)
+- `--tag-ids <ids>` -- UET tag IDs to filter by (comma-separated, default all)
 
 ### budgets
 
@@ -252,13 +253,10 @@ List labels for the account.
 
 ```bash
 microsoft-ads-cli labels
-microsoft-ads-cli labels --page-size 500
 ```
 
 Options:
 - `--account-id <id>` -- ad account ID
-- `--page-index <n>` -- page index, 0-based (default 0)
-- `--page-size <n>` -- results per page (default 1000)
 
 ### report
 
