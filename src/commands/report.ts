@@ -28,7 +28,7 @@ export function registerReportCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "reporting",
-          path: "ReportJobs/Submit",
+          path: "GenerateReport/Submit",
           accountId,
           body: {
             ReportRequest: {
@@ -67,7 +67,7 @@ export function registerReportCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "reporting",
-          path: "ReportJobs/Query",
+          path: "GenerateReport/Poll",
           body: { ReportRequestId: reportId },
         });
         output(data, program.opts().format);
@@ -90,7 +90,7 @@ export function registerReportCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "reporting",
-          path: "ReportJobs/Submit",
+          path: "GenerateReport/Submit",
           accountId,
           body: {
             ReportRequest: {
@@ -109,7 +109,7 @@ export function registerReportCommands(program: Command): void {
                 "BidMatchType", "DeliveredMatchType",
                 "Impressions", "Clicks", "Ctr",
                 "Spend", "AverageCpc", "Conversions",
-                "QualityScore", "AveragePosition",
+                "QualityScore",
               ],
               Scope: {
                 AccountIds: [accountId],
@@ -141,7 +141,7 @@ export function registerReportCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "reporting",
-          path: "ReportJobs/Submit",
+          path: "GenerateReport/Submit",
           accountId,
           body: {
             ReportRequest: {

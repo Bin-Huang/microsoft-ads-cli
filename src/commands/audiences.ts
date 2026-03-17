@@ -18,9 +18,10 @@ export function registerAudienceCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "campaign",
-          path: "Audiences/QueryByType",
+          path: "Audiences/QueryByIds",
           accountId: opts.accountId,
           body: {
+            AudienceIds: null,
             Type: types.join(" "),
           },
         });
@@ -40,9 +41,9 @@ export function registerAudienceCommands(program: Command): void {
         const data = await callApi({
           creds,
           service: "campaign",
-          path: "UetTags/Query",
+          path: "UetTags/QueryByIds",
           accountId: opts.accountId,
-          body: {},
+          body: { TagIds: null },
         });
         output(data, program.opts().format);
       } catch (err) {
@@ -55,18 +56,23 @@ export function registerAudienceCommands(program: Command): void {
     .description("List conversion goals")
     .option("--account-id <id>", "Ad account ID")
     .option("--type <type>", "Goal type: Url, Duration, PagesViewedPerVisit, Event, AppInstall, OfflineConversion, InStoreTransaction (comma-separated, default all)")
+    .option("--tag-ids <ids>", "UET tag IDs to filter by (comma-separated, default all)")
     .action(async (opts) => {
       try {
         const creds = loadCredentials(program.opts().credentials);
         const types = opts.type
           ? opts.type
           : "Url Duration PagesViewedPerVisit Event AppInstall OfflineConversion InStoreTransaction";
+        const tagIds = opts.tagIds
+          ? opts.tagIds.split(",").map((id: string) => id.trim())
+          : null;
         const data = await callApi({
           creds,
           service: "campaign",
-          path: "ConversionGoals/QueryByTagId",
+          path: "ConversionGoals/QueryByTagIds",
           accountId: opts.accountId,
           body: {
+            TagIds: tagIds,
             ConversionGoalTypes: types,
           },
         });

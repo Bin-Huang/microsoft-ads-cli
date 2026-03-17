@@ -52,21 +52,16 @@ export function registerBudgetCommands(program: Command): void {
     .command("labels")
     .description("List labels for the account")
     .option("--account-id <id>", "Ad account ID")
-    .option("--page-index <n>", "Page index (0-based, default 0)", "0")
-    .option("--page-size <n>", "Results per page (default 1000)", "1000")
     .action(async (opts) => {
       try {
         const creds = loadCredentials(program.opts().credentials);
         const data = await callApi({
           creds,
           service: "campaign",
-          path: "Labels/QueryByPage",
+          path: "Labels/QueryByIds",
           accountId: opts.accountId,
           body: {
-            PageInfo: {
-              Index: parseInt(opts.pageIndex),
-              Size: parseInt(opts.pageSize),
-            },
+            LabelIds: null,
           },
         });
         output(data, program.opts().format);
