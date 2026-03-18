@@ -10,11 +10,7 @@ Microsoft Ads CLI for AI agents (and humans). Pull performance reports across Se
 npm install -g microsoft-ads-cli
 ```
 
-Or run directly with npx:
-
-```bash
-npx microsoft-ads-cli --help
-```
+Or run directly: `npx microsoft-ads-cli --help`
 
 ## How it works
 
