@@ -6,8 +6,17 @@ Microsoft Ads CLI for AI agents (and humans). Pull performance reports across Se
 
 ## Installation
 
+Tell your AI agent (e.g. OpenClaw):
+
+> Install the CLI and skills from https://github.com/Bin-Huang/microsoft-ads-cli
+
+Or install manually:
+
 ```bash
 npm install -g microsoft-ads-cli
+
+# Add skills for AI agents (Claude Code, Cursor, Codex, etc.)
+npx skills add Bin-Huang/microsoft-ads-cli
 ```
 
 Or run directly: `npx microsoft-ads-cli --help`
