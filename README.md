@@ -8,7 +8,7 @@ Microsoft Ads CLI for AI agents (and humans). Pull performance reports across Se
 
 Tell your AI agent (e.g. OpenClaw):
 
-> Install the CLI and skills from https://github.com/Bin-Huang/microsoft-ads-cli
+> Install this CLI and skills from https://github.com/Bin-Huang/microsoft-ads-cli
 
 Or install manually:
 
