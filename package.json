@@ -1,7 +1,7 @@
 {
   "name": "microsoft-ads-cli",
   "version": "1.0.4",
-  "description": "Microsoft Advertising CLI for AI agents",
+  "description": "Microsoft Advertising CLI & Skills for AI agents",
   "type": "module",
   "bin": {
     "microsoft-ads-cli": "dist/index.js"

@@ -17,7 +17,7 @@ const program = new Command();
 
 program
   .name("microsoft-ads-cli")
-  .description("Microsoft Advertising CLI for AI agents")
+  .description("Microsoft Advertising CLI & Skills for AI agents")
   .version(version)
   .option("--format <format>", "Output format", "json")
   .option("--credentials <path>", "Path to credentials JSON file")
